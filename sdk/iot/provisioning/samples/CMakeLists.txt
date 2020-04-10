@@ -9,10 +9,10 @@ project (az_iot_provisioning_samples LANGUAGES C)
 
 set(CMAKE_C_STANDARD 99)
 
-# find_package(eclipse-paho-mqtt-c CONFIG)
-# if(NOT eclipse-paho-mqtt-c_FOUND)
-#   find_package(eclipse-paho-mqtt-c REQUIRED)
-# endif()
+find_package(eclipse-paho-mqtt-c CONFIG)
+if(NOT eclipse-paho-mqtt-c_FOUND)
+  find_package(eclipse-paho-mqtt-c REQUIRED)
+endif()
 
 find_package(OpenSSL CONFIG)
 if(NOT OpenSSL_FOUND)
@@ -33,7 +33,7 @@ target_link_libraries(
 
 target_link_libraries(
   paho_iot_provisioning_example PRIVATE
-  paho-mqtt3cs
+  eclipse-paho-mqtt-c::paho-mqtt3cs-static
   OpenSSL::SSL
   OpenSSL::Crypto
   )
