@@ -5,7 +5,7 @@ if (BUILD_PAHO_TRANSPORT)
 
 cmake_minimum_required (VERSION 3.10)
 
-project (az_iot_provisioning_samples LANGUAGES C)
+project (az_iot_hub_samples LANGUAGES C)
 
 set(CMAKE_C_STANDARD 99)
 
@@ -20,19 +20,19 @@ if(NOT OpenSSL_FOUND)
 endif()
 
 add_executable (
-  paho_iot_provisioning_example 
-  src/paho_iot_provisioning_example.c
+  paho_iot_hub_example 
+  src/paho_iot_hub_example.c
   )
 
 target_link_libraries(
-  paho_iot_provisioning_example PRIVATE
-  az_iot_provisioning
+  paho_iot_hub_example PRIVATE
+  az_iot_hub
   az_iot_core
   az_core
   )
 
 target_link_libraries(
-  paho_iot_provisioning_example PRIVATE
+  paho_iot_hub_example PRIVATE
   paho-mqtt3cs
   OpenSSL::SSL
   OpenSSL::Crypto
