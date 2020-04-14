@@ -33,7 +33,7 @@ target_link_libraries(
 
 target_link_libraries(
   paho_iot_hub_example PRIVATE
-  eclipse-paho-mqtt-c::paho-mqtt3cs-s
+  eclipse-paho-mqtt-c::paho-mqtt3cs-static
   OpenSSL::SSL
   OpenSSL::Crypto
   )
